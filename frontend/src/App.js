@@ -1,0 +1,11 @@
+import './App.css';
+import EmployeeHome from './pages/employeeHome';
+import Login from './pages/login';
+
+function App() {
+  return (
+    <EmployeeHome />
+  );
+}
+
+export default App;
