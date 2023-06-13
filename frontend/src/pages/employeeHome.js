@@ -49,14 +49,14 @@ const EmployeeHome = () => {
 
             <input type="text" id="searchbar" placeholder ="Search"/>
         <div id="middlegrid">
-            <div id = "KPI-grid"></div>
-            <div id = "KPI-grid"></div>
-            <div id = "KPI-grid"></div>
-            <div id = "KPI-grid"></div>
-            <div id = "KPI-grid"></div>
-            <div id = "KPI-grid"></div>
-            <div id = "KPI-grid"></div>
-            <div id = "KPI-grid"></div>
+            <div className = "KPI-grid"></div>
+            <div className = "KPI-grid"></div>
+            <div className = "KPI-grid"></div>
+            <div className = "KPI-grid"></div>
+            <div className = "KPI-grid"></div>
+            <div className = "KPI-grid"></div>
+            <div className = "KPI-grid"></div>
+            <div className = "KPI-grid"></div>
         </div>
         <div id="footer"></div>
         </div>

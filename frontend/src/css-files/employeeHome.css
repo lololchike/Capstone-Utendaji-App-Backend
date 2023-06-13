@@ -88,6 +88,14 @@
     margin-top: 13%;
     left: 30%;
     border-radius: 4%;
+    grid-gap:1%;
+    
+}
+
+.KPI-grid{
+    background-color: #272953;
+    min-width: 15%;
+    height: 100%;
 }
 
 #footer{
