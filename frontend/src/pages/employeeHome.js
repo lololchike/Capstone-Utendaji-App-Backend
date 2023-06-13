@@ -4,11 +4,20 @@ const EmployeeHome = () => {
     return ( 
 
         <div id="employee-home">
-            <div id="header"></div>
+            <div id="header">
+                <img id= "navbar-logo" src="logo-removebg.png" alt="" />
+            <ul id = "navbarlist">
+<li><img className="navbaritem" src="home.png" alt="" /></li>
+<li><img className="navbaritem" src="bell.png" alt="" /></li>
+<li><img className="navbaritem" src="message.png" alt="" /></li>
+
+            </ul>
+            </div>
 
         <div id="sidebar">
         <div id="avatardiv"><h3>EM</h3></div>
         <h4 id="employeeNameonsidebar">Elisa Marie</h4>
+        <p id = "employee-tittle">Employee</p>
         <strong><p>My Performance</p></strong>
         <strong><p>My Team</p></strong>
         <strong><p>My Jobs</p></strong>
@@ -69,8 +78,8 @@ const EmployeeHome = () => {
                 <h2>1</h2>
                 </div>
             <div className = "KPI-boxes">
-            <h4>Handling Time </h4> 
-                <h2>3.27</h2>
+            <h4>Total Customers </h4> 
+                <h2>53</h2>
                 </div>
             <div className = "KPI-boxes">
             <h4>Propositions </h4> 
@@ -89,9 +98,14 @@ const EmployeeHome = () => {
                 <h2>2,000,000</h2>
                 </div>
         </div>
-        <div id="footer"></div>
+        
+        <div id="footer">
+        <h6 id="footer-left">© {new Date().getFullYear()} Copyright Group-1 </h6>
+        <h6 id="footer-right">group-1@groups.org </h6>
+        </div>
         </div>
      );
 }
  
 export default EmployeeHome;
+

@@ -38,15 +38,19 @@
 
 }
 
+
+
 #avatardiv:hover{
     cursor: pointer;
 }
 
 #header {
+    display: flex;
     width: 100%;
-    background-color: rgb(70, 80, 133);
+    background-color: rgb(2, 11, 56);
     height: 8vh;
     position: absolute;
+    align-items: center;
 
 }
 
@@ -62,6 +66,34 @@
     flex-flow: column;
     border-radius: 5%;
     
+}
+
+#rightbar > h4{
+    margin:4%;
+}
+
+.navbaritem{
+    height: 4.2vh;
+}
+
+#navbar-logo{
+    position: absolute;
+    height: 6.9vh;
+    left: 5%;
+    width: 5.5%;
+}
+
+#navbar-logo:hover, .navbaritem:hover{
+cursor: pointer;
+}
+
+#navbarlist{
+   position: absolute;
+   right: 2%;
+   display: flex;
+   justify-content: space-between;
+   width: 12%;
+   list-style-type: none;
 }
 
 #searchbar {
@@ -89,9 +121,8 @@
     width: 40%;
     background-color: #16113A;
     margin-top: 13%;
-    left: 29.6%;
-    border-radius: 4%;
-    grid-gap:1%;
+    left: 29.4%;
+    grid-gap:1.5%;
     border-color: #16113A;
     border-width: 1.5vh;
     border-style: solid;
@@ -119,27 +150,48 @@
 }
 
 #footer{
+    display: flex;
     position: absolute;
     width: 100%;
-    height: 7vh;
-    background-color: rgb(70, 80, 133);
+    height: 5vh;
+    background-color: rgb(2, 11, 56);
     bottom: 0;
+    color: white;
+    align-items: center;
+    flex-wrap: wrap;
 }
-
-#sidebar p {
-display: inline-block ;
-display: flex;
-background-color: rgb(231, 225, 225);
-height: 6.5vh;
-   align-items: center;
-   margin: auto;
-   margin-bottom: 8%;
-   justify-content: center;
-   width: 90%;
-  
+#footer-right{
+    position: absolute;
+    right: 4%;
+}
+#footer-left{
+    position: absolute;
+    left: 3%;
+}
+#sidebar strong {
+    display: block;
+    display: flex;
+    background-color: rgb(231, 225, 225);
+    height: 6.5vh;
+    align-items: center;
+    margin: auto;
+    margin-bottom: 8%;
+    justify-content: center;
+    width: 90%;
+    margin-top: 1%;
   }
+  
+  #employee-tittle {
+    margin: auto;
+    margin-top: 0%;
+    background-color: white;
+    padding: 0%;
+    margin-bottom: 6%;
+    font-size: small;
+  }
+  
 
-  #sidebar p:hover{
+  #sidebar strong:hover{
     background-color: rgba(163, 160, 160, 0.726);
     cursor: pointer;
   }
@@ -147,10 +199,10 @@ height: 6.5vh;
   #employeeNameonsidebar{
     width: 90%;
     margin: auto;
-    height: 9%;
+    /* height: 5%; */
     background-color: rgb(255, 255, 255);
     margin-top: 1%;
-    margin-bottom: 0%;
+    margin-bottom: 0;
 }
 
 #employeeNameonsidebar:hover{
@@ -158,8 +210,7 @@ text-decoration: underline;
 cursor: pointer;
 }
 #rightbar h4{
- margin: auto;
- margin-top: 0%;
+    margin:4% auto 1% auto;
 }
 
 #online-employee{
@@ -191,6 +242,7 @@ background-color: rgb(245, 216, 178);
     width: 10%;
     right: 11%;
 }
+
 
 @media (max-width: 800px) {
     #middlegrid #searchbar #rightbar #sidebar{
