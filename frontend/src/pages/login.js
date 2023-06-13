@@ -7,8 +7,8 @@ const Login = () => {
 <div id = "login" >
 <div id = "loginForm" >
     <img src="logo.JPG" alt="logo" id="login-logo"/>
-    <h2 id ="login-welcome-h2">Welcome to Utendaji</h2>
-    <strong><p id ="login-welcome-p">Maximizing Effort</p></strong>
+    <div id = "Welcome-message" ><h2 id ="login-welcome-h2">Welcome to Utendaji</h2>
+    <strong><p id ="login-welcome-p">Maximizing Effort</p></strong></div>
     <label htmlFor="username">Username</label>
     <input type="text" id = "login-ursername" placeholder= "Username"/>
     <label htmlFor="password">Password</label>

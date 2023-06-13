@@ -1,5 +1,213 @@
 #employee-home{
-    background-color: rgb(230, 217, 204);
+    display: flex;
+    background-color: rgba(198, 194, 189, 0.689);
     height: 100vh;
+    background-attachment: fixed;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+    width: 100%;
+}
+
+#sidebar {
+    display: flex;
+    height: 68vh;
+    width: 18%;
+    background-color: rgb(255, 255, 255);
+    margin-top: 7%;
+    margin-left: 8%;
+    border-radius: 5%;
+    flex-direction: column;
+    text-align: center;
+}
+
+#avatardiv {
+    display: flex;
+    border-radius: 50%;
+    background-color: blueviolet;
+    width: 30%;
+    height: 11vh;
+    margin: auto;
+    margin-top: 10%;
+    text-align: center;
+    justify-content: center;
+    flex-flow: column;
+    color: white;
+    font-weight: bold;
+    font-size: large;
+    margin-bottom: 2%;
 
 }
+
+#avatardiv:hover{
+    cursor: pointer;
+}
+
+#header {
+    width: 100%;
+    background-color: rgb(70, 80, 133);
+    height: 8vh;
+    position: absolute;
+
+}
+
+#rightbar {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    height: 68vh;
+    width: 18%;
+    background-color: rgb(255, 255, 255);
+    margin-top: 7%;
+    right: 8%;
+    flex-flow: column;
+    border-radius: 5%;
+    
+}
+
+#searchbar {
+    position: absolute;
+    height: 6.6vh;
+    width: 40%;
+    background-color: rgb(255, 255, 255);
+    margin-top: 7%;
+    left: 30%;
+    border-radius: 2%;
+    border-style: none;
+    
+}
+#searchbar:focus, #searchbar:hover{
+    outline: none;
+    background-color: rgba(232, 232, 232, 0.788);
+    
+}
+
+#middlegrid {
+    position: absolute;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    min-height: 50vh;
+    width: 40%;
+    background-color: #16113A;
+    margin-top: 13%;
+    left: 29.6%;
+    border-radius: 4%;
+    grid-gap:1%;
+    border-color: #16113A;
+    border-width: 1.5vh;
+    border-style: solid;
+    
+}
+
+.KPI-boxes{
+    display: flex;
+    background-color: #272953;
+    min-width: 15%;
+    height: 100%;
+    border-radius: 5%;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+}
+
+.KPI-boxes > h4{
+    margin: 4%;
+}
+
+.KPI-boxes > h2{
+    margin: 4%;
+}
+
+#footer{
+    position: absolute;
+    width: 100%;
+    height: 7vh;
+    background-color: rgb(70, 80, 133);
+    bottom: 0;
+}
+
+#sidebar p {
+display: inline-block ;
+display: flex;
+background-color: rgb(231, 225, 225);
+height: 6.5vh;
+   align-items: center;
+   margin: auto;
+   margin-bottom: 8%;
+   justify-content: center;
+   width: 90%;
+  
+  }
+
+  #sidebar p:hover{
+    background-color: rgba(163, 160, 160, 0.726);
+    cursor: pointer;
+  }
+
+  #employeeNameonsidebar{
+    width: 90%;
+    margin: auto;
+    height: 9%;
+    background-color: rgb(255, 255, 255);
+    margin-top: 1%;
+    margin-bottom: 0%;
+}
+
+#employeeNameonsidebar:hover{
+text-decoration: underline;
+cursor: pointer;
+}
+#rightbar h4{
+ margin: auto;
+ margin-top: 0%;
+}
+
+#online-employee{
+    display: flex;
+    background-color: antiquewhite;
+    height: 6vh;
+    width: 90%;
+    margin: auto;
+    align-items: center;
+ 
+}
+
+#greenonlinelight{
+    height: 2.3vh;
+    background-color: green;
+    width: 6%;
+    margin-left: 3%;
+    border-radius: 50%;
+}
+
+#online-employee:hover{
+cursor: pointer;
+background-color: rgb(245, 216, 178);
+}
+
+.sendmessagesvg{
+    position: absolute;
+    height: 3.2vh;
+    width: 10%;
+    right: 11%;
+}
+
+@media (max-width: 800px) {
+    #middlegrid #searchbar #rightbar #sidebar{
+        position: absolute;
+      width: 100%;
+      margin-top: 30%;
+
+    }
+    #middlegrid {grid-template-columns: 1fr 1fr;}
+  }
+
+  @media (max-width: 500px) {
+    #middlegrid #searchbar #rightbar #sidebar{
+        position: absolute;
+      width: 100%;
+      margin-top: 30%;
+
+    }
+    #middlegrid {grid-template-columns: 1fr;}
+  }
