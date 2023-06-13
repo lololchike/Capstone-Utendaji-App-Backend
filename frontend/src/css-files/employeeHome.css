@@ -4,7 +4,10 @@
     height: 100vh;
     background-attachment: fixed;
     flex-wrap: wrap;
+    overflow-y: scroll;
+    width: 100%;
 }
+
 #sidebar {
     display: flex;
     height: 68vh;
@@ -41,7 +44,7 @@
 
 #header {
     width: 100%;
-    background-color: white;
+    background-color: rgb(70, 80, 133);
     height: 8vh;
     position: absolute;
 
@@ -86,23 +89,40 @@
     width: 40%;
     background-color: #16113A;
     margin-top: 13%;
-    left: 30%;
+    left: 29.6%;
     border-radius: 4%;
     grid-gap:1%;
+    border-color: #16113A;
+    border-width: 1.5vh;
+    border-style: solid;
     
 }
 
-.KPI-grid{
+.KPI-boxes{
+    display: flex;
     background-color: #272953;
     min-width: 15%;
     height: 100%;
+    border-radius: 5%;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+}
+
+.KPI-boxes > h4{
+    margin: 4%;
+}
+
+.KPI-boxes > h2{
+    margin: 4%;
 }
 
 #footer{
     position: absolute;
     width: 100%;
     height: 7vh;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(70, 80, 133);
     bottom: 0;
 }
 
@@ -165,6 +185,13 @@ cursor: pointer;
 background-color: rgb(245, 216, 178);
 }
 
+.sendmessagesvg{
+    position: absolute;
+    height: 3.2vh;
+    width: 10%;
+    right: 11%;
+}
+
 @media (max-width: 800px) {
     #middlegrid #searchbar #rightbar #sidebar{
         position: absolute;
@@ -172,4 +199,15 @@ background-color: rgb(245, 216, 178);
       margin-top: 30%;
 
     }
+    #middlegrid {grid-template-columns: 1fr 1fr;}
+  }
+
+  @media (max-width: 500px) {
+    #middlegrid #searchbar #rightbar #sidebar{
+        position: absolute;
+      width: 100%;
+      margin-top: 30%;
+
+    }
+    #middlegrid {grid-template-columns: 1fr;}
   }
