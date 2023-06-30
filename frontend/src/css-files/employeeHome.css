@@ -119,13 +119,14 @@ cursor: pointer;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     min-height: 50vh;
     width: 40%;
-    background-color: #16113A;
+    background-color: #f3f3f7;
     margin-top: 13%;
     left: 29.4%;
-    grid-gap:1.5%;
+    grid-gap:2.5%;
     border-color: #16113A;
     border-width: 1.5vh;
     border-style: solid;
+      
     
 }
 
@@ -139,6 +140,8 @@ cursor: pointer;
     align-items: center;
     justify-content: center;
     flex-flow: column;
+    
+      
 }
 
 .KPI-boxes > h4{
