@@ -9,9 +9,9 @@ const Login = () => {
     <img src="logo.JPG" alt="logo" id="login-logo"/>
     <div id = "Welcome-message" ><h2 id ="login-welcome-h2">Welcome to Utendaji</h2>
     <strong><p id ="login-welcome-p">Maximizing Effort</p></strong></div>
-    <label htmlFor="username">Username</label>
+    <label htmlFor="login-ursername">Username</label>
     <input type="text" id = "login-ursername" placeholder= "Username"/>
-    <label htmlFor="password">Password</label>
+    <label htmlFor="login-password">Password</label>
     <input type="text" id = "login-password" placeholder= "Password" />
 <button id="sign-in-button">Continue</button>
 

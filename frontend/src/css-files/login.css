@@ -25,7 +25,7 @@
   }
   
   #sign-in-button{
-    background-color: rgb(205, 51, 149);
+    background-color: rgb(30, 37, 67);
     height: 5.3vh;
     width: 83%;
     margin: auto;
@@ -36,7 +36,7 @@
   
   #sign-in-button:hover{
     cursor: pointer;
-    background-color: blueviolet;
+    background-color: rgb(25, 101, 216);
   }
   
   #login-logo{
@@ -78,7 +78,6 @@
     #sign-in-button{
       width: 84%;
     }
-
     #login-welcome-h2{
 font-size:115%;
     }

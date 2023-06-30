@@ -15,9 +15,10 @@
     background-color: rgb(255, 255, 255);
     margin-top: 7%;
     margin-left: 8%;
-    border-radius: 5%;
+    border-radius: 10px;
     flex-direction: column;
     text-align: center;
+    font-size: small;
 }
 
 #avatardiv {
@@ -37,9 +38,6 @@
     margin-bottom: 2%;
 
 }
-
-
-
 #avatardiv:hover{
     cursor: pointer;
 }
@@ -64,7 +62,8 @@
     margin-top: 7%;
     right: 8%;
     flex-flow: column;
-    border-radius: 5%;
+    border-radius: 10px;
+    font-size:small;
     
 }
 
@@ -73,7 +72,7 @@
 }
 
 .navbaritem{
-    height: 4.2vh;
+    height: 3.7vh;
 }
 
 #navbar-logo{
@@ -83,33 +82,37 @@
     width: 5.5%;
 }
 
+.navbar-logo{
+  height: 6.9vh;
+}
+
 #navbar-logo:hover, .navbaritem:hover{
 cursor: pointer;
 }
 
 #navbarlist{
    position: absolute;
-   right: 2%;
+   right: 5%;
    display: flex;
    justify-content: space-between;
-   width: 12%;
+   width: 16%;
    list-style-type: none;
 }
 
-#searchbar {
+#content-heading {
+    display: flex;
     position: absolute;
     height: 6.6vh;
     width: 40%;
-    background-color: rgb(255, 255, 255);
+    background-color: #16113A;
     margin-top: 7%;
     left: 30%;
-    border-radius: 2%;
+    border-radius: 10px;
     border-style: none;
-    
-}
-#searchbar:focus, #searchbar:hover{
-    outline: none;
-    background-color: rgba(232, 232, 232, 0.788);
+    color: white;
+    align-items: center;
+    justify-content: center;
+    font-size: small;
     
 }
 
@@ -126,8 +129,52 @@ cursor: pointer;
     border-color: #16113A;
     border-width: 1.5vh;
     border-style: solid;
-      
+    border-radius: 10px;
+    font-size: small;
+}
+
+#team-grid, #job-grid{
+    position: absolute;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 40%;
+    background-color: #16113A;
+    margin-top: 13%;
+    left: 29.4%;
+    grid-gap:1.5%;
+    border-color: #16113A;
+    border-width: 1.5vh;
+    border-style: solid;
+    border-radius: 10px;
+    font-size: small;
+    max-height: fit-content;
+    display: none;
+}
+
+.team-boxes{
+    display: flex;
+    margin: 0%;
+    background-color: #272953;
+    min-width: 15%;
+    height: 6vh;
+    border-radius: 10px;
+    color: white;
+    align-items: center;
+    justify-content: space-between;
+    flex-flow: row;
+    padding: 0 4%;
+
     
+}
+
+.team-boxes h5:hover{
+    background-color: #373954;
+    cursor: pointer;
+}
+
+.team-boxes:hover{
+    background-color: #373954;
+    /* cursor: pointer; */
 }
 
 .KPI-boxes{
@@ -135,7 +182,7 @@ cursor: pointer;
     background-color: #272953;
     min-width: 15%;
     height: 100%;
-    border-radius: 5%;
+    border-radius: 10px;
     color: white;
     align-items: center;
     justify-content: center;
@@ -202,7 +249,6 @@ cursor: pointer;
   #employeeNameonsidebar{
     width: 90%;
     margin: auto;
-    /* height: 5%; */
     background-color: rgb(255, 255, 255);
     margin-top: 1%;
     margin-bottom: 0;
@@ -223,27 +269,35 @@ cursor: pointer;
     width: 90%;
     margin: auto;
     align-items: center;
+    padding: 2%;
+    border-radius: 3px;
+    font-size: 90%;
  
 }
 
 #greenonlinelight{
-    height: 2.3vh;
+    height: 1.6vh;
     background-color: green;
-    width: 6%;
+    width: 5%;
     margin-left: 3%;
     border-radius: 50%;
 }
 
 #online-employee:hover{
-cursor: pointer;
+    cursor: inherit;
 background-color: rgb(245, 216, 178);
 }
 
 .sendmessagesvg{
     position: absolute;
-    height: 3.2vh;
-    width: 10%;
+    height: 3vh;
+    width: 9%;
     right: 11%;
+    
+}
+
+.sendmessagesvg:hover{
+    cursor: pointer;
 }
 
 

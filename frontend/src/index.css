@@ -28,3 +28,12 @@ background-color: rgb(145, 150, 150);
   background-color: bisque;
   height: 55vh;
 }
+
+.team-boxes img{
+  position: relative;
+  height: 3vh;
+}
+
+.team-boxes img:hover{
+  cursor: pointer;
+}
