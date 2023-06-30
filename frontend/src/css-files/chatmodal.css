@@ -1,0 +1,102 @@
+#chat{
+    margin-top: 11%;
+    margin-left: 35%;
+    height: 63vh;
+    width: 28%;
+    background-color: burlywood;
+  position:fixed;
+  border-radius: 15px;
+}
+
+#chat-modal{
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    background-color: rgb(18, 7, 7, .5);
+    display: none;
+
+}
+
+.chatheader{
+    display: flex;
+    position: absolute;
+    height: 12%;
+    width: 100%;
+    background-color: rgb(56, 56, 122);
+    border-radius: 15px;
+    color: burlywood;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+align-items: center;
+justify-content: center;
+}
+
+.chatheader img{
+    position: absolute;
+    height: 3.5vh;
+    right: 5%;
+
+}
+
+.chatheader img:hover{
+    cursor: pointer;
+}
+
+.chatfooter{
+    position: absolute;
+    height: 12%;
+    width: 100%;
+    border-radius: 15px;
+    color: burlywood;
+    bottom: 0%;
+    display: flex;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+    border-style: none;
+}
+
+#chatboxmessageentryinput{
+   position: absolute;
+    height: 11%;
+    width: 89.1%;
+    left: 0;
+    background-color: rgb(10, 10, 57);
+    color: white;
+    font-size: small;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-style: none;
+    bottom: 0%;
+    word-break: break-all;
+    word-wrap: break-word;
+    
+}
+
+::placeholder {
+    color: burlywood;
+  }
+
+#chatboxmessageentryinput:focus{
+    outline: none;
+    background-color: rgb(70, 62, 235);
+    word-break: break-all;
+}
+
+#ok-button{
+    position: absolute;
+    right: 0;
+    height: 11.4%;
+    width: 10%;
+    border-bottom-right-radius: 10px;
+    border-style: none;
+    bottom: 0%;
+}
+
+#ok-button:hover{
+    cursor: pointer;
+    background-color: rgb(67, 30, 147);
+    color: white;
+}
+
+
+

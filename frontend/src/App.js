@@ -1,29 +1,43 @@
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import './App.css';
 import EmployeeHome from './pages/employeeHome';
 import Login from './pages/login';
-import Signup from "./pages/signup";
+import ManagerHome from "./pages/managerHome";
+import AdminHome from "./pages/adminHome";
 
 function App() {
   
   return (
       
-        <div className="App">
-          
-            <EmployeeHome />
-           
-        </div>
+
+<div className="App">
+<BrowserRouter>
+<Routes>
+    <Route path="/*" element = {<Login />}/>
+    <Route path="/employee" element = {<EmployeeHome />}/>
+    <Route path="/manager" element = {<ManagerHome />}/>
+    <Route path="/admin" element = {<AdminHome />}/>
+    </Routes>
+    </BrowserRouter>
+</div>
+    
+
+
 
   );
 }
 
 export default App;
 
-/* <Router>
+/* 
+
 <div className="App">
-  <Routes>
+<Router>
+<Routes>
     <Route path="/" element = {<Login />}/>
     <Route path="/employee" element = {<EmployeeHome />}/>
-  </Routes>
+    </Routes>
+    </Router>
 </div>
-</Router> */
+
+ */

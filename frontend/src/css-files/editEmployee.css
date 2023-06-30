@@ -1,0 +1,30 @@
+#editEmployeebdrop{
+    display: none;
+    position: absolute;
+    background-color: rgba(135, 136, 150, 0.5);
+    width: 100%;
+    min-height: 100%;
+}
+
+#editEmployee{
+    display: flex;
+    flex-flow: column;
+    width: 35%;
+    margin: auto;
+    margin-top: 7%;
+    background-color: rgb(89, 75, 224);
+    min-height: 50vh;
+    padding: 4%;
+    border-radius: 10px;
+}
+
+#editEmployee h6{
+    margin: 0%;
+    padding: 0;
+    color: white;
+}
+
+#cross{
+    margin-top: 0;
+    height: 3.5vh;
+}
