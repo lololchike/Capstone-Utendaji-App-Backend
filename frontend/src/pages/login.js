@@ -12,7 +12,7 @@ const Login = () => {
     <label htmlFor="login-ursername">Username</label>
     <input type="text" id = "login-ursername" placeholder= "Username"/>
     <label htmlFor="login-password">Password</label>
-    <input type="text" id = "login-password" placeholder= "Password" />
+    <input type="Password" id = "login-password" placeholder= "Password" />
 <button id="sign-in-button">Continue</button>
 
     </div>
