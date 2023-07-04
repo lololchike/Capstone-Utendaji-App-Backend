@@ -165,10 +165,18 @@ const EmployeeHome = (props) => {
      {!props.isAdmin && <MyJobs />}
       
       <div id="footer">
-        <h6 id="footer-left">
-          © {new Date().getFullYear()} Copyright Group-1{" "}
-        </h6>
-        <h6 id="footer-right">group-1@groups.org </h6>
+        <div id="footer-left">
+          {/* <div>
+         <h5>© {new Date().getFullYear()} </h5> </div> */}
+          
+            
+        <h6 >Josephine Kemuma</h6>
+        <h6 >Bill Otunga</h6>
+        </div>
+        <div id="footer-right">
+        <h6 >Lucy Olochike</h6>
+        <h6 >Kenneth Kabutu</h6></div>
+        
       </div>
       <ChatModal />
     </div>
