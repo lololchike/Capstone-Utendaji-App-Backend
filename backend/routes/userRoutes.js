@@ -66,44 +66,8 @@ res.status(400).json({error: error.message})
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 module.exports = router;
 
-// create user
-
-// router.post("/login", async (req, res) => {
-//   try {
-//     const { error } = validate(req.body);
-//     if (error) {
-//       return res.status(400).send({ message: error.details[0].message });
-//     }
-//     const user = await User.findOne({ userName: req.body.userName });
-//     if (user) {
-//       return res.status(409).send({ message: "User already exists" });
-//     }
-
-// const salt = await bcrypt.genSalt(Number(process.env.SALT))
-// const hashedPW = await bcrypt.hash(req.body.password, salt)
-// await new User ({...req.body, password: hashedPW}).save()
-// res.status(201).send({message: "User successfully added"})
-//   } catch (err) {
-//     res.status(500).send({message: "Internal server error"})
-//   }
-// });
 
 
 
