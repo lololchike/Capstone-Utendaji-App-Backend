@@ -64,7 +64,7 @@ const EmployeeHome = (props) => {
         <strong onClick = {showTeam}>
           <p>{props.adminTeamButton}</p>
         </strong>
-        <strong onClick = {showJobs}>
+        <strong onClick = {props.showJobs}>
           <p>{props.adminJobButton}</p>
         </strong>
         <strong>
@@ -172,20 +172,6 @@ const EmployeeHome = (props) => {
         <h6 >group-1@groups.org </h6>
         </div>
         
-        {/* <div id="footer">
-        <div id="footer-left">
-          {/* <div>
-         <h5>© {new Date().getFullYear()} </h5> </div> */}
-          
-            
-        {/* <h6 >Josephine Kemuma</h6>
-        <h6 >Bill Otunga</h6>
-        </div>
-        <div id="footer-right">
-        <h6 >Lucy Olochike</h6>
-        <h6 >Kenneth Kabutu</h6></div>
-        
-      </div> */}
 
       </div>
       <ChatModal />
@@ -194,6 +180,12 @@ const EmployeeHome = (props) => {
   
 };
 EmployeeHome.defaultProps = {
+  showJobs: () => {
+    document.getElementById("middlegrid").style.display = "none";
+    document.getElementById("team-grid").style.display = "none";
+    document.getElementById("job-grid").style.display = "grid";
+    document.getElementById("content-heading").innerHTML = "Jobs you've applied";
+  },
   performanceTitle: "My Performance",
   staffName : "Elisa Marie",
   staffRole : "Employee",

@@ -5,15 +5,18 @@ import axios from "axios"
 const Login = () => {
     const [userName, setUserName] = useState("")
     const [password, setPassword] = useState("")
+    const [error, setError] = useState(null)
+    const [showError, setShowError] = useState(false)
 
     const createUser = async() => {
         try{
-            console.log(userName, password) 
-            const user = await axios.post("http://localhost:4000/login", {password: password, userName:userName})
-
+            setShowError(null)
+            const user = await axios.post("http://localhost:4000", {password: password, userName:userName})
+    
         }
-        catch (err){
-console.log(err)
+        catch (error){
+            setError(error.response.data.error)
+            setShowError(true)
         }
 
     }
@@ -30,6 +33,7 @@ console.log(err)
     <label htmlFor="login-password">Password</label>
     <input type="Password" id = "login-password" placeholder= "Password" onChange={(e) => setPassword(e.target.value)}/>
 <button id="sign-in-button" onClick={createUser}>Continue</button>
+{showError && (<p className="error">{error}</p>)}
 
     </div>
 </div>

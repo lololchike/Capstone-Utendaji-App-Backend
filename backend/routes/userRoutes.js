@@ -36,7 +36,7 @@ res.status(200).json({user, token})
 
 // signup
 router.post("/", async (req, res)=>{
-const {userName, password} = req.body
+const {  firstName, middleName, lastName,userName, password,  email, role, station, team} = req.body
 
 try{
   if (!userName || !password){
@@ -54,7 +54,7 @@ try{
   }
   const salt = await bcrypt.genSalt(10)
   const hashedPassword = await bcrypt.hash(password, salt)
-const user = await User.create({userName, password:hashedPassword}) 
+const user = await User.create({firstName, middleName, lastName, email, role, station, team, userName, password:hashedPassword}) 
 
 const token = generateToken(user._id)
 res.status(200).json({user, token})

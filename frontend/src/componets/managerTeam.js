@@ -6,7 +6,7 @@ const ManagerTeam = () => {
       <div id="team-grid">
         <div className="team-boxes">
           <h5>Emily Johnson</h5>
-          <img src="editemployee.png" alt="" />
+          <img src="editemployee.png" alt=""  />
         </div>
         <div className="team-boxes">
           <h5>Benjamin Thompson</h5>
