@@ -5,10 +5,19 @@ import MyJobs from "../componets/myjobs";
 import Performance from "../componets/myperformance";
 import Team from "../componets/myteam";
 import "../css-files/employeeHome.css";
+import {useAuthContext} from "../hooks/useAuthContex"
 
 
 const EmployeeHome = (props) => {
   const [isAdmin, setIsAdmin] = useState(false)
+  const {dispatch} = useAuthContext()
+
+
+  const logout = () =>{
+localStorage.removeItem("user")
+dispatch({type: "LOGOUT"})
+console.log("You have logged out")
+  }
   
   const openChat = () => {
     document.getElementById("chat-modal").style.display = "block";
@@ -48,7 +57,7 @@ const EmployeeHome = (props) => {
             <img className="navbaritem" src="message.png" alt="" />
           </li>
           <li>
-           <Link to="/"> <img className="navbaritem" src="log-out.png" alt="" /></Link>
+           <img className="navbaritem" src="log-out.png" alt="" onClick={logout} />
           </li>
         </ul>
       </div>

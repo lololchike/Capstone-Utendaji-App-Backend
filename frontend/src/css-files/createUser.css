@@ -35,7 +35,7 @@
     cursor: pointer;
   }
 
-#createFormElement{
+.createFormElement{
     width: 80%;
     margin: auto;
     margin-bottom: 2.5%;
@@ -46,7 +46,7 @@
 #createFormElementselects{
     width: 81%;
     margin: auto;
-    height: 3.9vh;
+    height: 3.8vh;
     margin-bottom: 2%;
     border-radius: 5px;
 }
@@ -56,7 +56,7 @@
     margin: auto;
     grid-template-columns: 1fr 1fr 1fr;
     margin-bottom: 2%;
-    width: 85.5%;
+    width: 85.3%;
 
 }
 

@@ -54,13 +54,13 @@ const CreateUser = (props) => {
     <strong><p id ="login-welcome-p">Please fill details accurately</p></strong></div>
     <div id="names">
     <div><label htmlFor="">First Name</label>
-    <input type="text" id = "createFormElement" placeholder= "First Name" onChange={(e) => setFirstName(e.target.value)} /></div>
+    <input type="text" className = "createFormElement" placeholder= "First Name" onChange={(e) => setFirstName(e.target.value)} /></div>
    <div><label htmlFor="createFormElement">Middle Name</label>
-    <input type="text" id = "createFormElement" placeholder= "Middle Name" onChange={(e) => setMiddleName(e.target.value)} /></div> 
+    <input type="text" className = "createFormElement" placeholder= "Middle Name" onChange={(e) => setMiddleName(e.target.value)} /></div> 
     <div><label htmlFor="">Last Name</label>
-    <input type="text" id = "createFormElement" placeholder= "Last Name" onChange={(e) => setLastName(e.target.value)} /></div></div>
+    <input type="text" className = "createFormElement" placeholder= "Last Name" onChange={(e) => setLastName(e.target.value)} /></div></div>
     <label htmlFor="">Enter User Email</label>
-    <input type="email" id = "createFormElement" placeholder= "Email" onChange={(e) => setEmail(e.target.value)}/>
+    <input type="email" className = "createFormElement" placeholder= "Email" onChange={(e) => setEmail(e.target.value)}/>
     <label htmlFor=""> Select Role</label>
     <select  id = "createFormElementselects" onChange={(e) => setRole(e.target.value)}>
     <option value="" className="option" >Click to Select</option>
@@ -69,7 +69,7 @@ const CreateUser = (props) => {
         <option value="Manager">Manager</option>
     </select>
     <label htmlFor="">Enter Workstation</label>
-    <input type="text" id = "createFormElement" placeholder= "Workstation" onChange={(e) => setStation(e.target.value)}/>
+    <input type="text" className = "createFormElement" placeholder= "Workstation" onChange={(e) => setStation(e.target.value)}/>
     <label htmlFor="">Map to Team</label>
     <select  id = "createFormElementselects" onChange={(e) => setTeam(e.target.value)}>
     <option value="" className="option" >Click to Select</option>
@@ -80,9 +80,9 @@ const CreateUser = (props) => {
         <option value="Managers">Managers</option>
     </select>
     <label htmlFor="">Choose a Username</label>
-    <input type="text" id = "createFormElement" placeholder= "Username" onChange={(e) => setUserName(e.target.value)}/>
+    <input type="text" className = "createFormElement" placeholder= "Username" onChange={(e) => setUserName(e.target.value)}/>
     <label htmlFor="">Set a Password</label>
-    <input type="Password" id = "createFormElement" placeholder= "Password" onChange={(e) => setPassword(e.target.value)}/>
+    <input type="Password" className = "createFormElement" placeholder= "Password" onChange={(e) => setPassword(e.target.value)}/>
 <button id="sign-in-button" onClick={createUser}>Save User</button>
 {showError && <p className="error">{error}</p>}
 

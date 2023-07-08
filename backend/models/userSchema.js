@@ -9,7 +9,11 @@ const userSchema = new schema(
     {  firstName:String,
       middleName: String,
       lastName: String,
-        userName:{
+          email: String,
+          role: String,
+          station: String,
+          team: String,
+          userName:{
             type: String,
             required: true,
             unique: true
@@ -19,11 +23,10 @@ const userSchema = new schema(
             type: String,
             required: true
           }, 
-          email: String,
-    
-          role: String,
-          station: String,
-          team: String
+          dateHired: {
+            type: String,
+            default: new Date()
+          }
         
     }
 )

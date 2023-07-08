@@ -36,7 +36,7 @@ res.status(200).json({user, token})
 
 // signup
 router.post("/", async (req, res)=>{
-const {  firstName, middleName, lastName,userName, password,  email, role, station, team} = req.body
+const {  firstName, middleName, lastName,userName, password,  email, role, station, team, dateHired} = req.body
 
 try{
   if (!userName || !password){
@@ -46,18 +46,19 @@ try{
   //   throw Error("Please enter a valid email")
   // }
   // if (!validator.isStrongPassword(password)){
-  // throw Error("The password is too weak")
+  // throw Error("That password is too weak")
   // }
   const usernameexists = await User.findOne({userName})
   if(usernameexists){
-      throw Error("Username belongs to someone else")
+      throw Error("That username is already taken")
   }
   const salt = await bcrypt.genSalt(10)
   const hashedPassword = await bcrypt.hash(password, salt)
-const user = await User.create({firstName, middleName, lastName, email, role, station, team, userName, password:hashedPassword}) 
+const user = await User.create({firstName, middleName, lastName, email, role, station, team, dateHired, userName, password:hashedPassword}) 
 
-const token = generateToken(user._id)
-res.status(200).json({user, token})
+// const token = generateToken(user._id)
+
+res.status(200).json({user})
 }
 catch(error){
 res.status(400).json({error: error.message})
