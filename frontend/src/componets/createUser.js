@@ -3,6 +3,7 @@ import {useState} from "react"
 import axios from "axios"
 
 const CreateUser = (props) => {
+
     const [userName, setUserName] = useState("")
     const [password, setPassword] = useState("")
     const [firstName, setFirstName] = useState("")
@@ -16,15 +17,17 @@ const CreateUser = (props) => {
     const [error, setError] = useState(null)
     const [showError, setShowError] = useState(false)
     const [showSuccess, setShowSuccess] = useState(false)
+    const [isLoading, setIsLoading] = useState(false)
     
     const createUser = async() => {
         try{
+            setIsLoading(true)
             setShowError(false)
             console.log(userName, password) 
             const user = await axios.post("http://localhost:4000", {
-                firstName:firstName.toUpperCase(),
-                middleName: middleName.toUpperCase(),
-                lastName: lastName.toUpperCase(), 
+                firstName:(firstName[0].toUpperCase() + firstName.slice(1, firstName.length).toLowerCase()),
+                middleName: (middleName[0].toUpperCase() + middleName.slice(1, middleName.length).toLowerCase()),
+                lastName: (lastName[0].toUpperCase() + lastName.slice(1, lastName.length).toLowerCase()), 
             password: password, 
             userName:userName.toUpperCase(),
             email: email.toLowerCase(),
@@ -33,12 +36,12 @@ const CreateUser = (props) => {
             team: team
         })
         setShowSuccess(true)
-
+        setIsLoading(false)
         }
         catch (error){
             setError(error.response.data.error)
             setShowError(true)
-            
+            setIsLoading(false)
         }
 
     }
@@ -83,7 +86,7 @@ const CreateUser = (props) => {
     <input type="text" className = "createFormElement" placeholder= "Username" onChange={(e) => setUserName(e.target.value)}/>
     <label htmlFor="">Set a Password</label>
     <input type="Password" className = "createFormElement" placeholder= "Password" onChange={(e) => setPassword(e.target.value)}/>
-<button id="sign-in-button" onClick={createUser}>Save User</button>
+<button id="sign-in-button" onClick={createUser} >Save User</button>
 {showError && <p className="error">{error}</p>}
 
 
