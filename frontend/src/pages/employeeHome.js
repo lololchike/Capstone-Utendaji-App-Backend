@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from 'react-router-dom';
 import ChatModal from "../componets/chat-modal";
 import MyJobs from "../componets/myjobs";
@@ -10,7 +10,21 @@ import {useAuthContext} from "../hooks/useAuthContex"
 
 const EmployeeHome = (props) => {
   const [isAdmin, setIsAdmin] = useState(false)
-  const {dispatch} = useAuthContext()
+  const { currentUser, dispatch } = useAuthContext();
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+    if (currentUser) {
+      dispatch({ type: "LOGIN", payload: currentUser });
+    }
+    setLoading(false);
+  }, [dispatch]);
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
 
 
   const logout = () =>{
@@ -63,9 +77,9 @@ console.log("You have logged out")
       </div>
       <div id="sidebar">
         <div id="avatardiv">
-          <h3>{(props.staffName)[0]}{(props.staffName)[(props.staffName).indexOf(" ") + 1]}</h3>
+          <h3>{currentUser.user.firstName[0]}{currentUser.user.lastName[0]}</h3>
         </div>
-        <h4 id="employeeNameonsidebar">{props.staffName}</h4>
+        <h4 id="employeeNameonsidebar">{currentUser.user.firstName} {currentUser.user.lastName}</h4>
         <p id="employee-tittle">{props.staffRole}</p>
         <strong onClick={showPerformance}>
           <p>{props.performanceTitle}</p>

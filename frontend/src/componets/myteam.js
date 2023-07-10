@@ -1,4 +1,5 @@
 const Team = () => {
+
   return (
     <div id="team-grid">
       <div className="team-boxes">

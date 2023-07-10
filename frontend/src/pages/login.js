@@ -29,8 +29,14 @@ const Login = () => {
       dispatch({ type: "LOGIN", payload: json });
       setIsLoading(false);
       
-      if (user.role === "Admin") { // Use triple equals (===) for comparison
-        navigate("/admin"); // Use navigate function to navigate to "/admin"
+      if (user.role === "Admin") { 
+        navigate("/admin"); 
+      }
+      else if (user.role === "Manager") { 
+        navigate("/manager"); 
+      }
+      else if (user.role === "Employee") { 
+        navigate("/employee"); 
       }
     } catch (error) {
       setError(error.response.data.error);
