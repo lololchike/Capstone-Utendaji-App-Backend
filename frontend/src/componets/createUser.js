@@ -18,16 +18,20 @@ const CreateUser = (props) => {
     const [showError, setShowError] = useState(false)
     const [showSuccess, setShowSuccess] = useState(false)
     const [isLoading, setIsLoading] = useState(false)
+
+    const form = document.getElementById("createForm") 
     
-    const createUser = async() => {
+    const createUser = async(e) => {
+            e.preventDefault();
         try{
             setIsLoading(true)
             setShowError(false)
             console.log(userName, password) 
             const user = await axios.post("http://localhost:4000", {
-                firstName:(firstName[0].toUpperCase() + firstName.slice(1, firstName.length).toLowerCase()),
-                middleName: (middleName[0].toUpperCase() + middleName.slice(1, middleName.length).toLowerCase()),
-                lastName: (lastName[0].toUpperCase() + lastName.slice(1, lastName.length).toLowerCase()), 
+                firstName:(firstName.slice(0, 1).toUpperCase() + firstName.slice(1, firstName.length).toLowerCase()),
+                middleName: (middleName.slice(0, 1).toUpperCase() + middleName.slice(1, middleName.length).toLowerCase()),
+                lastName: (lastName.slice(0, 1).toUpperCase() + lastName.slice(1, lastName.length).toLowerCase()), 
+
             password: password, 
             userName:userName.toUpperCase(),
             email: email.toLowerCase(),
@@ -49,32 +53,32 @@ const CreateUser = (props) => {
 
     return (  
 <div id = "create" >
-<div id = "createForm" >
+<form id = "createForm" onSubmit={createUser}>
     <div id = "Welcome-message" ><h2 id ="create-user-h2"><div></div>Creating new User
     
     <img src="close.png" alt="" onClick={(e)=>props.setShowCreateForm(false)} />
     </h2>
     <strong><p id ="login-welcome-p">Please fill details accurately</p></strong></div>
     <div id="names">
-    <div><label htmlFor="">First Name</label>
-    <input type="text" className = "createFormElement" placeholder= "First Name" onChange={(e) => setFirstName(e.target.value)} /></div>
+    <div><label htmlFor="" >First Name</label>
+    <input required type="text" className = "createFormElement" placeholder= "First Name" onChange={(e) => setFirstName(e.target.value)} /></div>
    <div><label htmlFor="createFormElement">Middle Name</label>
-    <input type="text" className = "createFormElement" placeholder= "Middle Name" onChange={(e) => setMiddleName(e.target.value)} /></div> 
+    <input type="text" required className = "createFormElement" placeholder= "Middle Name" onChange={(e) => setMiddleName(e.target.value)} /></div> 
     <div><label htmlFor="">Last Name</label>
-    <input type="text" className = "createFormElement" placeholder= "Last Name" onChange={(e) => setLastName(e.target.value)} /></div></div>
+    <input type="text" required className = "createFormElement" placeholder= "Last Name" onChange={(e) => setLastName(e.target.value)} /></div></div>
     <label htmlFor="">Enter User Email</label>
-    <input type="email" className = "createFormElement" placeholder= "Email" onChange={(e) => setEmail(e.target.value)}/>
+    <input required type="email" className = "createFormElement" placeholder= "Email" onChange={(e) => setEmail(e.target.value)}/>
     <label htmlFor=""> Select Role</label>
-    <select  id = "createFormElementselects" onChange={(e) => setRole(e.target.value)}>
+    <select required id = "createFormElementselects" onChange={(e) => setRole(e.target.value)}>
     <option value="" className="option" >Click to Select</option>
         <option value="Admin" >Admin</option>
         <option value="Employee">Employee</option>
         <option value="Manager">Manager</option>
     </select>
     <label htmlFor="">Enter Workstation</label>
-    <input type="text" className = "createFormElement" placeholder= "Workstation" onChange={(e) => setStation(e.target.value)}/>
+    <input required type="text" className = "createFormElement" placeholder= "Workstation" onChange={(e) => setStation(e.target.value)}/>
     <label htmlFor="">Map to Team</label>
-    <select  id = "createFormElementselects" onChange={(e) => setTeam(e.target.value)}>
+    <select required id = "createFormElementselects" onChange={(e) => setTeam(e.target.value)}>
     <option value="" className="option" >Click to Select</option>
         <option value="Team Pacific: Manager: Temayo James">Team Pacific: Manager: Temayo James</option>
         <option value="Team Yes: Manager: Mike Seblen">Team Yes: Manager: Mike Seblen</option>
@@ -83,14 +87,14 @@ const CreateUser = (props) => {
         <option value="Managers">Managers</option>
     </select>
     <label htmlFor="">Choose a Username</label>
-    <input type="text" className = "createFormElement" placeholder= "Username" onChange={(e) => setUserName(e.target.value)}/>
+    <input required type="text" className = "createFormElement" placeholder= "Username" onChange={(e) => setUserName(e.target.value)}/>
     <label htmlFor="">Set a Password</label>
-    <input type="Password" className = "createFormElement" placeholder= "Password" onChange={(e) => setPassword(e.target.value)}/>
-<button id="sign-in-button" onClick={createUser} >Save User</button>
+    <input required type="Password" className = "createFormElement" placeholder= "Password" onChange={(e) => setPassword(e.target.value)}/>
+<button id="sign-in-button"  >Save User</button>
 {showError && <p className="error">{error}</p>}
 
 
-    </div>
+    </form>
   {showSuccess && <div className="sucess-backdrop"><div className="sucess">
         <img src="check-mark.png" alt="" />
         <h5>User Created Successfully</h5>

@@ -14,7 +14,7 @@ const EmployeeHome = (props) => {
 
 
   const logout = () =>{
-localStorage.removeItem("user")
+localStorage.removeItem("currentUser")
 dispatch({type: "LOGOUT"})
 console.log("You have logged out")
   }
