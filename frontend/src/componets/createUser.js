@@ -13,16 +13,23 @@ const CreateUser = (props) => {
     const [role, setRole] = useState("")
     const [station, setStation] = useState("")
     const [team, setTeam] = useState("")
-
     const [error, setError] = useState(null)
     const [showError, setShowError] = useState(false)
     const [showSuccess, setShowSuccess] = useState(false)
     const [isLoading, setIsLoading] = useState(false)
 
-    const form = document.getElementById("createForm") 
+    const hiringAdmin = JSON.parse(localStorage.getItem("currentUser"));
     
     const createUser = async(e) => {
             e.preventDefault();
+
+            if (!hiringAdmin) {
+                alert("No user found"); // Or show a message to the user
+                return;
+              }
+              if (hiringAdmin) {
+                console.log(hiringAdmin.user.userName)
+              }
         try{
             setIsLoading(true)
             setShowError(false)
@@ -31,13 +38,14 @@ const CreateUser = (props) => {
                 firstName:(firstName.slice(0, 1).toUpperCase() + firstName.slice(1, firstName.length).toLowerCase()),
                 middleName: (middleName.slice(0, 1).toUpperCase() + middleName.slice(1, middleName.length).toLowerCase()),
                 lastName: (lastName.slice(0, 1).toUpperCase() + lastName.slice(1, lastName.length).toLowerCase()), 
-
             password: password, 
             userName:userName.toUpperCase(),
             email: email.toLowerCase(),
             role: role,
             station: station,
-            team: team
+            team: team,
+            dateHired: new Date().toLocaleString(),
+            hiredBy: (hiringAdmin.user.userName),
         })
         setShowSuccess(true)
         setIsLoading(false)

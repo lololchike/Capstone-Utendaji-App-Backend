@@ -23,11 +23,13 @@ const userSchema = new schema(
             type: String,
             required: true
           }, 
-          dateHired: {
-            type: String,
-            default: new Date()
+          dateHired: String,
+          hiredBy: String,
+          employeeNumber: String,
+          performance: {
+            type: Object,
+            default: {HandlingTime: 0, Revenue: 0, MIADays: 0, TotalCustomers: 0, Propositions: 0, Airtime: 0, Devices: 0, TotalSales: 0}
           }
-        
     }
 )
 

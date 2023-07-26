@@ -3,6 +3,7 @@ const User = require("../models/userSchema");
 const bcrypt = require("bcrypt");
 const validator = require("validator")
 const jwt = require("jsonwebtoken")
+let employeeNumber
 
 const generateToken = (_id) => {
  return jwt.sign({_id}, process.env.JWTPRIVATEKEY, {expiresIn: "3d"})
@@ -36,25 +37,40 @@ res.status(200).json({user, token})
 
 // signup
 router.post("/", async (req, res)=>{
-const {  firstName, middleName, lastName,userName, password,  email, role, station, team, dateHired} = req.body
+const {  firstName, middleName, lastName,userName, password,  email, role, station, team, dateHired, hiredBy} = req.body
 
 try{
   if (!userName || !password){
     throw Error("All fields must be filled")
-  }
+  } 
   // if (!validator.isEmail(email)){
   //   throw Error("Please enter a valid email")
   // }
   // if (!validator.isStrongPassword(password)){
   // throw Error("That password is too weak")
   // }
+  const emailexists = await User.findOne({email})
+  if(emailexists){
+      throw Error("Email already registered")
+  }
   const usernameexists = await User.findOne({userName})
   if(usernameexists){
       throw Error("That username is already taken")
   }
+
+// generate employee number 
+const lastUser = await User.findOne().sort({ _id: -1 });
+console.log(lastUser)
+if(lastUser.employeeNumber){
+  employeeNumber = (parseInt(lastUser.employeeNumber) + 1).toString()
+} 
+else{
+  employeeNumber = "0001"
+}
+
   const salt = await bcrypt.genSalt(10)
   const hashedPassword = await bcrypt.hash(password, salt)
-const user = await User.create({firstName, middleName, lastName, email, role, station, team, dateHired, userName, password:hashedPassword}) 
+const user = await User.create({firstName, middleName, lastName, email, role, station, team, dateHired, userName, password:hashedPassword, hiredBy, employeeNumber}) 
 
 // const token = generateToken(user._id)
 
