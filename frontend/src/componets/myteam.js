@@ -6,11 +6,15 @@ const Team = () => {
   const { currentUser } = useAuthContext();
   const [loading, setLoading] = useState(true);
   const [team, setTeam] = useState([]);
+  const [teamHeading, setTeamHeading] = useState("");
+  const [teamToFetchWith, setTeamToFetchWith] = useState("");
   const [isManager, setIsManager] = useState(false);
-  const getTeam = async () => {
+
+
+  const getTeam = async (teamToFetchWith) => {
     try {
       const response = await axios.post("/api/getmanagerteam", {
-          team: currentUser.user.team,
+          team: teamToFetchWith,
       });
 
       if (response.data) {
@@ -23,17 +27,33 @@ const Team = () => {
   };
 
   useEffect(() => {
-    if (currentUser) {
-      getTeam();
-      setLoading(false);
+    const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+    if (currentUser){
       if (currentUser.user.role === "Manager"){
         setIsManager(true)
-      }
+        if(currentUser.user.firstName === "Temayo"){
+          setTeamToFetchWith("Team Pacific: Manager: Temayo James")
+        }
+        else if(currentUser.user.firstName === "Mike"){
+          setTeamToFetchWith("Team Yes: Manager: Mike Seblen")
+        }
+        else if(currentUser.user.firstName === "Dennis"){
+          setTeamToFetchWith("Team Dollar: Manager: Dennis Rio")
+        }
+       
+    } 
+    else{
+      setTeamToFetchWith(currentUser.user.team) 
+      setTeamHeading(currentUser.user.team)
+      
     }
+    getTeam(teamToFetchWith);
+    setLoading(false);    
+  } 
   }, [currentUser]);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <div>Loading team...</div>;
   }
 
   return (
