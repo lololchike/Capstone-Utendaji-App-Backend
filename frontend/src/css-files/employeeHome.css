@@ -137,7 +137,6 @@ cursor: pointer;
 #job-grid {
   position: absolute;
   display: grid;
-  /* grid-template-columns: 1fr 1fr; */
   grid-template-columns: auto auto;
   width: 40%;
   background-color: #16113A;
@@ -151,6 +150,9 @@ cursor: pointer;
   font-size: small;
   min-height: max-content;
   display: none;
+  grid-template-rows: 6vh;
+  grid-auto-rows: 6vh;
+
 }
 
 
