@@ -42,12 +42,12 @@ try{
   if (!userName || !password){
     throw Error("All fields must be filled")
   } 
-  // if (!validator.isEmail(email)){
-  //   throw Error("Please enter a valid email")
-  // }
-  // if (!validator.isStrongPassword(password)){
-  // throw Error("That password is too weak")
-  // }
+  if (!validator.isEmail(email)){
+    throw Error("Please enter a valid email")
+  }
+  if (!validator.isStrongPassword(password)){
+  throw Error("That password is too weak")
+  }
   const emailexists = await User.findOne({email})
   if(emailexists){
       throw Error("Email already registered")
