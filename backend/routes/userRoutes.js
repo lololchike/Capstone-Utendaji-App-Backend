@@ -27,7 +27,6 @@ router.post("/login", async (req, res)=>{
     const token = generateToken(user._id)
 res.status(200).json({user, token})
 
-
   }
   catch(err){
     res.status(400).json({error: err.message})
@@ -63,6 +62,7 @@ const lastUser = await User.findOne().sort({ _id: -1 });
 console.log(lastUser)
 if(lastUser.employeeNumber){
   employeeNumber = (parseInt(lastUser.employeeNumber) + 1).toString()
+  employeeNumber = employeeNumber.padStart(4, "0");
 } 
 else{
   employeeNumber = "0001"
