@@ -30,7 +30,6 @@ const EmployeeHome = (props) => {
   const logout = () =>{
 localStorage.removeItem("currentUser")
 dispatch({type: "LOGOUT"})
-console.log("You have logged out")
   }
   
   const openChat = () => {

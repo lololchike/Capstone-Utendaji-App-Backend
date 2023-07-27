@@ -81,7 +81,7 @@ res.status(400).json({error: error.message})
 }
 })
 
-router.get('/api/getmanagerteam', async (req, res) => {
+router.post('/api/getmanagerteam', async (req, res) => {
   const {team} = req.body
   try {
     const users = await User.find({ team });
