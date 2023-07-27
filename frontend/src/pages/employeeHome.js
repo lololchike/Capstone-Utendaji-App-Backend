@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import ChatModal from "../componets/chat-modal";
 import MyJobs from "../componets/myjobs";
 import Performance from "../componets/myperformance";
-import Team from "../componets/myteam";
+import Team, {teamHeading} from "../componets/myteam";
 import "../css-files/employeeHome.css";
 import {useAuthContext} from "../hooks/useAuthContex"
 
@@ -29,6 +29,7 @@ const EmployeeHome = (props) => {
 
   const logout = () =>{
 localStorage.removeItem("currentUser")
+localStorage.removeItem("teamHeading")
 dispatch({type: "LOGOUT"})
   }
   
@@ -42,10 +43,20 @@ dispatch({type: "LOGOUT"})
     document.getElementById("content-heading").innerHTML = props.performanceHeading;
   };
   const showTeam = () => {
-        document.getElementById("middlegrid").style.display = "none";
-        document.getElementById("job-grid").style.display = "none";
-        document.getElementById("team-grid").style.display = "grid";
-        document.getElementById("content-heading").innerHTML = props.teamHeading;
+    const storedTeamHeading = localStorage.getItem("teamHeading");
+    if (storedTeamHeading) {
+      // If teamHeading is available in localStorage, use it
+      document.getElementById("middlegrid").style.display = "none";
+      document.getElementById("job-grid").style.display = "none";
+      document.getElementById("team-grid").style.display = "grid";
+      document.getElementById("content-heading").innerHTML = storedTeamHeading;
+    } else {
+      // If teamHeading is not available in localStorage, use the default value
+      document.getElementById("middlegrid").style.display = "none";
+      document.getElementById("job-grid").style.display = "none";
+      document.getElementById("team-grid").style.display = "grid";
+      document.getElementById("content-heading").innerHTML = props.teamHeading;
+    }
       };
       const showJobs = () => {
         document.getElementById("middlegrid").style.display = "none";
