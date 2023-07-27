@@ -17,7 +17,7 @@ const Login = () => {
       setIsLoading(true);
       setError(null);
       setShowError(false);
-      const response = await axios.post("http://localhost:4020/login", {
+      const response = await axios.post("/login", {
         password,
         userName: userName.toUpperCase(),
       });

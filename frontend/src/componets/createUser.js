@@ -34,7 +34,7 @@ const CreateUser = (props) => {
             setIsLoading(true)
             setShowError(false)
             console.log(userName, password) 
-            const user = await axios.post("http://localhost:4020", {
+            const user = await axios.post("/", {
                 firstName:(firstName.slice(0, 1).toUpperCase() + firstName.slice(1, firstName.length).toLowerCase()),
                 middleName: (middleName.slice(0, 1).toUpperCase() + middleName.slice(1, middleName.length).toLowerCase()),
                 lastName: (lastName.slice(0, 1).toUpperCase() + lastName.slice(1, lastName.length).toLowerCase()), 
