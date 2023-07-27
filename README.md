@@ -2,16 +2,22 @@
    **University Student Registration Website**
 
 ## Live Link
-   coming up...
+  The site is live at http://ec2-34-207-191-119.compute-1.amazonaws.com/
+
+## Authors Information
+   * Josephine Kemuma
+   * Bill Otunga
+   * Lucy Ololchike
+   * Kenneth Kabutu
 
 ## Test Users
-To test our app, use the below test user profiles we created. 
+To test our app, click on the live link and use the below test user profiles we created. Usernames are NOT case sensitive.
 
-* Employee: username: BOTUNGA, password: kenya123
+* Employee: username: EMARIE, password: kenya123
 
 * Manager: username: TJAMES, password: kenya123
 
-* Admin: username: EMARIE, password: kenya123
+* Admin:  username: BOTUNGA, password: kenya123
 
 ## Technologies Used
 Hosted on AWS EC2
@@ -31,12 +37,6 @@ Hosted on AWS EC2
 ## Project Description
 The tool helps enhance the productivity of employees by showing them realtime perfomace data. It allows the management to track and monitor the performance of each employee in real-time, providing them with data and insights that can be used to identify areas where improvements are needed. I also allows all memebrs of the organization to chat with each other.
    
-## Authors Information
-   * Josephine Kemuma
-   * Bill Otunga
-   * Lucy Ololchike
-   * Kenneth Kabutu
-
 ## Setup Instructions
 * Click on the livelink or;
 * Clone the Repository in VScode

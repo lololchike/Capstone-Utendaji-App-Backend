@@ -10,7 +10,7 @@ const generateToken = (_id) => {
   }
   
 // login
-router.post("/login", async (req, res)=>{
+router.post("/api/login", async (req, res)=>{
   const {userName, password} = req.body
   try{
     if (!userName || !password){
@@ -35,7 +35,7 @@ res.status(200).json({user, token})
 )
 
 // signup
-router.post("/", async (req, res)=>{
+router.post("/api/createuser/", async (req, res)=>{
 const {  firstName, middleName, lastName,userName, password,  email, role, station, team, dateHired, hiredBy} = req.body
 
 try{
@@ -61,8 +61,8 @@ try{
 const lastUser = await User.findOne().sort({ _id: -1 });
 console.log(lastUser)
 if(lastUser.employeeNumber){
-  employeeNumber = (parseInt(lastUser.employeeNumber) + 1).toString()
-  employeeNumber = employeeNumber.padStart(4, "0");
+  employeeNumber = (parseInt(lastUser.employeeNumber.slice(2)) + 1).toString()
+  employeeNumber = `EK${employeeNumber.padStart(4, "0")}`;
 } 
 else{
   employeeNumber = "0001"
@@ -80,6 +80,17 @@ catch(error){
 res.status(400).json({error: error.message})
 }
 })
+
+router.get('/api/getmanagerteam', async (req, res) => {
+  const {team} = req.body
+  try {
+    const users = await User.find({ team });
+    res.status(200).json(users);
+  } catch (error) {
+    res.status(500).json({ error: 'Error while fetching users' });
+  }
+});
+
 
 
 

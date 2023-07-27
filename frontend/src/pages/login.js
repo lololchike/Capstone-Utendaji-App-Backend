@@ -17,11 +17,10 @@ const Login = () => {
       setIsLoading(true);
       setError(null);
       setShowError(false);
-      const response = await axios.post("/login", {
+      const response = await axios.post("/api/login", {
         password,
         userName: userName.toUpperCase(),
       });
-
       const json = response.data;
       localStorage.setItem("currentUser", JSON.stringify(json));
       const user = json.user; 
@@ -61,7 +60,7 @@ const Login = () => {
           placeholder="Username"
           onChange={(e) => {
             setShowError(false)
-            setUserName(e.target.value)}}
+            setUserName(e.target.value.trim())}}
         />
         <label htmlFor="login-password">Password</label>
         <input
@@ -71,7 +70,7 @@ const Login = () => {
           onChange={(e) => 
             {
               setShowError(false)
-              setPassword(e.target.value)}}
+              setPassword(e.target.value.trim())}}
         />
         <button id="sign-in-button" onClick={login} disabled={isLoading}>
           Continue

@@ -30,7 +30,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route
-            path="/"
+            path="/*"
             element={
               currentUser ? (
                 <Navigate to={getUserRoute(currentUser.user.role)} replace />

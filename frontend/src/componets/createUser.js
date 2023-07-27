@@ -34,7 +34,7 @@ const CreateUser = (props) => {
             setIsLoading(true)
             setShowError(false)
             console.log(userName, password) 
-            const user = await axios.post("/", {
+            const user = await axios.post("/api/createuser/", {
                 firstName:(firstName.slice(0, 1).toUpperCase() + firstName.slice(1, firstName.length).toLowerCase()),
                 middleName: (middleName.slice(0, 1).toUpperCase() + middleName.slice(1, middleName.length).toLowerCase()),
                 lastName: (lastName.slice(0, 1).toUpperCase() + lastName.slice(1, lastName.length).toLowerCase()), 
@@ -69,24 +69,24 @@ const CreateUser = (props) => {
     <strong><p id ="login-welcome-p">Please fill details accurately</p></strong></div>
     <div id="names">
     <div><label htmlFor="" >First Name</label>
-    <input required type="text" className = "createFormElement" placeholder= "First Name" onChange={(e) => setFirstName(e.target.value)} /></div>
+    <input required type="text" className = "createFormElement" placeholder= "First Name" onChange={(e) => setFirstName(e.target.value.trim())} /></div>
    <div><label htmlFor="createFormElement">Middle Name</label>
-    <input type="text" required className = "createFormElement" placeholder= "Middle Name" onChange={(e) => setMiddleName(e.target.value)} /></div> 
+    <input type="text" required className = "createFormElement" placeholder= "Middle Name" onChange={(e) => setMiddleName(e.target.value.trim())} /></div> 
     <div><label htmlFor="">Last Name</label>
-    <input type="text" required className = "createFormElement" placeholder= "Last Name" onChange={(e) => setLastName(e.target.value)} /></div></div>
+    <input type="text" required className = "createFormElement" placeholder= "Last Name" onChange={(e) => setLastName(e.target.value.trim())} /></div></div>
     <label htmlFor="">Enter User Email</label>
-    <input required type="email" className = "createFormElement" placeholder= "Email" onChange={(e) => setEmail(e.target.value)}/>
+    <input required type="email" className = "createFormElement" placeholder= "Email" onChange={(e) => setEmail(e.target.value.trim())}/>
     <label htmlFor=""> Select Role</label>
-    <select required id = "createFormElementselects" onChange={(e) => setRole(e.target.value)}>
+    <select required id = "createFormElementselects" onChange={(e) => setRole(e.target.value.trim())}>
     <option value="" className="option" >Click to Select</option>
         <option value="Admin" >Admin</option>
         <option value="Employee">Employee</option>
         <option value="Manager">Manager</option>
     </select>
     <label htmlFor="">Enter Workstation</label>
-    <input required type="text" className = "createFormElement" placeholder= "Workstation" onChange={(e) => setStation(e.target.value)}/>
+    <input required type="text" className = "createFormElement" placeholder= "Workstation" onChange={(e) => setStation(e.target.value.trim())}/>
     <label htmlFor="">Map to Team</label>
-    <select required id = "createFormElementselects" onChange={(e) => setTeam(e.target.value)}>
+    <select required id = "createFormElementselects" onChange={(e) => setTeam(e.target.value.trim())}>
     <option value="" className="option" >Click to Select</option>
         <option value="Team Pacific: Manager: Temayo James">Team Pacific: Manager: Temayo James</option>
         <option value="Team Yes: Manager: Mike Seblen">Team Yes: Manager: Mike Seblen</option>
@@ -95,9 +95,9 @@ const CreateUser = (props) => {
         <option value="Managers">Managers</option>
     </select>
     <label htmlFor="">Choose a Username</label>
-    <input required type="text" className = "createFormElement" placeholder= "Username" onChange={(e) => setUserName(e.target.value)}/>
+    <input required type="text" className = "createFormElement" placeholder= "Username" onChange={(e) => setUserName(e.target.value.trim())}/>
     <label htmlFor="">Set a Password</label>
-    <input required type="Password" className = "createFormElement" placeholder= "Password" onChange={(e) => setPassword(e.target.value)}/>
+    <input required type="Password" className = "createFormElement" placeholder= "Password" onChange={(e) => setPassword(e.target.value.trim())}/>
 <button id="sign-in-button"  >Save User</button>
 {showError && <p className="error">{error}</p>}
 
