@@ -1,5 +1,5 @@
 ## Project Name
-   **Utendaji Perfomance Tracker**
+   ### Utendaji Perfomance Tracker
 
 ## Live Link
   The site is live at http://ec2-34-207-191-119.compute-1.amazonaws.com/
