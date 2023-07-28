@@ -34,7 +34,7 @@ res.status(200).json({user, token})
 }
 )
 
-// signup
+// creating user
 router.post("/api/createuser/", async (req, res)=>{
 const {  firstName, middleName, lastName,userName, password,  email, role, station, team, dateHired, hiredBy} = req.body
 
@@ -67,20 +67,15 @@ if(lastUser.employeeNumber){
 else{
   employeeNumber = "0001"
 }
-
   const salt = await bcrypt.genSalt(10)
   const hashedPassword = await bcrypt.hash(password, salt)
-const user = await User.create({firstName, middleName, lastName, email, role, station, team, dateHired, userName, password:hashedPassword, hiredBy, employeeNumber}) 
-
-// const token = generateToken(user._id)
-
+const user = await User.create({firstName, middleName, lastName, email, role, station, team, dateHired, userName, password:hashedPassword, hiredBy, employeeNumber})
 res.status(200).json({user})
 }
 catch(error){
 res.status(400).json({error: error.message})
 }
 })
-
 router.post('/api/getmanagerteam', async (req, res) => {
   const {team} = req.body
   try {
