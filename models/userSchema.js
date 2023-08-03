@@ -33,17 +33,6 @@ const userSchema = new schema(
     }
 )
 
-// userSchema.statics.signup = async function(userName, password){
-//     const usernameexists = await this.findOne({userName})
-//     if(usernameexists){
-//         throw Error("Username belongs to someone else")
-//     }
-//     const salt = await bcrypt.genSalt(10)
-//     const hashedPassword = await bcrypt.hash(password, salt)
-// const user = await this.create({userName, password:hashedPassword})
-// return user
-// } 
-
 module.exports = mongoose.model("User", userSchema)
 
 

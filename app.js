@@ -1,11 +1,10 @@
 require('dotenv').config();
 const express = require("express");
 const createrouter = require("./routes/userRoutes");
-// const loginRouter = require("../backend/routes/authRoutes");
 const cors = require("cors");
 const mongoose = require("mongoose");
 const cookieParser = require("cookie-parser");
-const path = require("path"); // Import the path module
+const path = require("path"); 
 const app = express();
 
 app.use(express.json()); 

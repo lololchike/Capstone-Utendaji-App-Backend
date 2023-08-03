@@ -86,9 +86,6 @@ router.post('/api/getmanagerteam', async (req, res) => {
   }
 });
 
-
-
-
 module.exports = router;
 
 
