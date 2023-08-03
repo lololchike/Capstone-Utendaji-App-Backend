@@ -19,6 +19,8 @@ To test our app, click on the live link and use the below test user profiles we 
 
 * Admin:  username: LOLOLCHIKE, password: Kenya123.
 
+
+
 ## Technologies Used
 Hosted on AWS EC2
 1. The frontend is built on reactJS (with context api for user state management). 
