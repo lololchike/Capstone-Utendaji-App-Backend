@@ -18,11 +18,11 @@ router.post("/api/login", async (req, res)=>{
     }
     const user = await User.findOne({userName})
     if (!user){
-      throw Error("No such user exists")
+      throw Error("Username and password don't match")
     }
     const match = await bcrypt.compare(password, user.password)
     if (!match){
-      throw Error("Wrong password entered")
+      throw Error("Username and password don't match")
     }
     const token = generateToken(user._id)
 res.status(200).json({user, token})
@@ -49,13 +49,13 @@ try{
   if(emailexists){
       throw Error("Email already registered")
   }
-  if (!validator.isStrongPassword(password)){
-  throw Error("That password is too weak")
-  }
   const usernameexists = await User.findOne({userName})
   if(usernameexists){
-      throw Error("That username is already taken")
+      throw Error(`Username ${userName} is already taken`)
   }
+  if (!validator.isStrongPassword(password)){
+    throw Error("Password too weak")
+    }
 
 // generate employee number 
 const lastUser = await User.findOne().sort({ _id: -1 });
