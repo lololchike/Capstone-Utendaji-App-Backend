@@ -29,7 +29,7 @@ app.use(express.static(path.join(__dirname, "../frontend/build")));
 
 // Route all GET requests to the index.html file
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "../frontend/build/index.html"));
+  res.sendFile(path.join(__dirname, "../Capstone-Utendaji-App/build/index.html"));
 }); 
 
-app.listen(4020, () => console.log("Server listening on port 4020"));
+app.listen(4020, () => console.log("Server listening on port 4020")); 
